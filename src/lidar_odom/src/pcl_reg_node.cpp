@@ -195,7 +195,9 @@ enum class Axis
         // pass_x.filter(*points_pcl);
         // pass_y.setInputCloud(points_pcl);
         // pass_y.filter(*points_pcl);
-        pointcloud_tinker_filter(points_pcl);
+        // pointcloud_tinker_filter(points_pcl);
+        pointcloud_range_filter(points_pcl, Axis::X, -100.0, 0.0, true);
+        pointcloud_range_filter(points_pcl, Axis::Z,  0.0, 2.0);
         publish_pointcloud2(points_pcl);
       }
 
